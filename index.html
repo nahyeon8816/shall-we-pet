@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1400">
+
+    
+    <title>쉘위펫호텔</title>
+
+    <!--nav font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Upright:wght@500;600&family=Inconsolata:wght@400;500;700&family=Katibeh&family=Koulen&family=Neuton:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--basics font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inconsolata:wght@400;500;700&family=Koulen&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="images/icon.png" rel="icon" type="image/png" size="32x20">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+            
+                $('.tab .tabs a').on('click',function(){ // 탭메뉴에 있는 링크를 클릭했을때
+                    var idx = $(this).parent().index(); // 현재 클릭한 링크의 부모가 몇번째 인지 idx 변수에 넣는다.
+            
+                    $(this).parent().siblings().removeClass('on'); // 현재 클릭한 링크의 부모를 제외 한 나머지 li에 on클래스를 제거하고
+                    $(this).parent().addClass('on'); // 현재 클릭한 링크의 부모 li에 on클래스 넣는다.
+            
+                    $(this).parent().parent().siblings('.tab_con').removeClass('on');
+                    // 현재 클릭한 부모 li의 부모 ul을 제외한 나머지 클래스 .tab_con에 클래스 on을 지워준다.
+            
+                    $(this).parent().parent().siblings('.tab_con').eq(idx).addClass('on');
+                    // 현재 클릭한 부모 li의 부모 ul을 제외한 나머지 클래스 .tab_con을 선택하고 그중 eq번째에 클래스 on을 넣는다.
+            
+                });
+                
+            });
+            
+            </script>
+            
+
+</head>
+<body>
+
+    <!--헤더 s-->  
+    <div id="header">
+        <div class="header_inner">
+            <div class="main_nav">
+                <ul>
+                    <li><a href="#">Room</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+
+
+            <div id="sub">
+                <div class="sub_menu">
+                    <ul class="menu">
+                        <li><a href="#">Standard</a></li>
+                        <li><a href="#">Superior</a></li>
+                        <li><a href="#">Deluxe</a></li>
+                        <li><a href="#">Suite</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="#">Restaurant</a></li>
+                        <li><a href="#">Lounge & Bar</a></li>
+                        <li><a href="#">Bakery</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="#">Promotion&Event</a></li>
+                        <li><a href="#">Pet Studio</a></li>
+                        <li><a href="#">Massage & Spa</a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li><a href="#">Brand Story</a></li>
+                        <li><a href="#"><img src="images/logo.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+                
+            </div>
+
+            <a href="#" class="logo"><img src="images/logo.png" alt="로고"></a>
+
+            <ul class="nav_2">
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">JOIN</a></li>
+                <li><a href="#">MEMBERSHIP</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--메인 배너-->
+    <div class="banner">
+        <div class="banner_inner">
+           <p class="button">자세히 보기</p>
+        </div>
+
+
+
+        <!--검색창-->
+    
+            <div id="search">
+                <ul class="search_inner">
+                    <li><a href="#none">type<br><h4>Deluxe</h4></a></li>
+                    <li><a href="#none"><h4 class="center">∧</h4></a></li>
+                    <li><a href="#none">CHECK IN/OUT<br><h4>2022.4.27 수 - 2022.08.26 금</h4></a></li>
+                    <li><a href="#none">Room<br><h4>+1-</h4></a></li>
+                    <li><a href="#none">ADULT<br><h4>+1-</h4></a></li>
+                    <li><a href="#none">PET<br><h4>+1-</h4></a></li>
+                    <li><a href="#none"><h3 class="search_button">SEARCH</h3></a></li>
+                </ul>
+            </div>
+            
+
+    </div>
+
+
+    
+
+    <!--컨텐츠1 s-->
+    <div id="con1">
+            <h1>ROOMS</h1>
+        <div class="tab">
+	    <ul class="tabs type1">
+	        <li class="on"><a href="#a">Standard</a></li>
+	        <li><a href="#a">Superior</a></li>
+	        <li><a href="#a">Deluxe</a></li>
+	        <li><a href="#a">Suite</a></li>
+	    </ul>	
+
+        <div class="tab_con on"> <!--스탠다드-->
+            <div class="con1_left">
+                <ul>
+                    <li><a href="#none"></a>
+                        <img src="images/standard_1.jpg" alt="룸1">
+                        <div class="con1_box"></div>
+                    </li>
+                </ul>
+            
+                
+            </div>
+
+            <div class="con1_right">
+            <h2>Standard</h2>
+            <p>쉘위펫의 스탠다드 객실에서는 푸른 바다의 전망을<br>
+                볼 수 있으며, 여유있는 실내 공간과 다양하고 실용적인<br>
+                어니메티도 함께 구비되어 있습니다.<br>
+                모던하면서도 세련된 인테리어가 돋보이는 객실입니다.</p>
+
+            <h5>Capacity</h5>
+            <p>성인 1 반려동물 1 (성인최대2인)</p>
+
+            <h5>Rooms</h5>
+            <p>침실 1 화장실 1</p>
+
+            <h5>Bed</h5>
+            <p>킹베드 1</p>
+            <p class="content__item"><a href="#" class="link link--metis">veiw</a></p>
+            </div>
+
+            <div>
+                <ul class="con1_bottom">
+                    <li><img src="images/standard_2.jpg" alt="room2"></li>
+                    <li><img src="images/standard_3.jpg" alt="room3"></li>
+                    <li><img src="images/standard_4.jpg" alt="room4"></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="tab_con"> <!--슈퍼리어-->
+            <div class="con1_left">
+                <ul>
+                    <li><a href="#none"></a>
+                        <img src="images/superior1.jpg" alt="룸1">
+                        <div class="con1_box"></div>
+                    </li>
+                </ul>
+            
+                
+            </div>
+
+            <div class="con1_right">
+            <h2>Superior</h2>
+            <p>쉘위펫의 슈퍼리어 객실에서는 파스텔 톤의 차분한<br>
+                인테리어를 갖추고 있으며, 합리적인 가격과 조용한<br>
+                휴식을 즐길 수 있습니다.
+                심플하고 아늑한 분위기 아래 <br>편안한 라이프 스타일을 반영하였습니다.</p>
+
+            <h5>Capacity</h5>
+            <p>성인 1 반려동물 2 (성인최대2인)</p>
+
+            <h5>Rooms</h5>
+            <p>침실 1 화장실 1</p>
+
+            <h5>Bed</h5>
+            <p>킹베드 1</p>
+            <p class="content__item"><a href="#" class="link link--metis">veiw</a></p>
+            </div>
+
+            <div>
+                <ul class="con1_bottom">
+                    <li><img src="images/superior2.jpg" alt="room2"></li>
+                    <li><img src="images/superior3.jpg" alt="room3"></li>
+                    <li><img src="images/superior4.jpg" alt="room4"></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="tab_con"> <!--디럭스-->
+            <div class="con1_left">
+                <ul>
+                    <li><a href="#none"></a>
+                        <img src="images/room_1.jpg" alt="룸1">
+                        <div class="con1_box"></div>
+                    </li>
+                </ul>
+            
+                
+            </div>
+
+            <div class="con1_right">
+            <h2>Deluxe</h2>
+            <p>쉘위펫의 디럭스 객실은 모던하면서 세련된 인테리어와<br> 
+                창 밖으로 펼쳐지는푸른 수목이 돋보이는 객실입니다.<br>
+                은은한 조명으로 아늑함이 더해진 디럭스룸에서<br>
+                편안한 휴식을 경험해 보시기 바랍니다.</p>
+
+            <h5>Capacity</h5>
+            <p>성인 2 반려동물 2 (성인최대3인)</p>
+
+            <h5>Rooms</h5>
+            <p>침실 1 거실 1 욕실 1 화장실 1</p>
+
+            <h5>Bed</h5>
+            <p>킹베드 1</p>
+            <p class="content__item"><a href="#" class="link link--metis">veiw</a></p>
+            </div>
+
+            <div>
+                <ul class="con1_bottom">
+                    <li><img src="images/room_2.jpg" alt="room2"></li>
+                    <li><img src="images/room_3.jpg" alt="room3"></li>
+                    <li><img src="images/room_4.jpg" alt="room4"></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="tab_con"> <!--스위트-->
+            <div class="con1_left">
+                <ul>
+                    <li><a href="#none"></a>
+                        <img src="images/suite.jpg" alt="룸1">
+                        <div class="con1_box"></div>
+                    </li>
+                </ul>
+            
+                
+            </div>
+
+            <div class="con1_right">
+            <h2>Suite</h2>
+            <p>쉘위펫의 스위트 객실은 최고층에 위치한 객실로<bR>
+                기품 있는 분위기를 느끼며 최상의 휴식을 누릴 수 있습니다.<br>
+                넓은 공간 내 심플한 인테리어가 고급스러운 분위기를<br> 더해줍니다.</p>
+
+            <h5>Capacity</h5>
+            <p>성인 2 반려동물 3 (성인최대3인)</p>
+
+            <h5>Rooms</h5>
+            <p>침실 1 거실 1 욕실 1 화장실 2</p>
+
+            <h5>Bed</h5>
+            <p>킹베드 1</p>
+            <p class="content__item"><a href="#" class="link link--metis">veiw</a></p>
+            </div>
+
+            <div>
+                <ul class="con1_bottom">
+                    <li><img src="images/suite2.jpg" alt="room2"></li>
+                    <li><img src="images/suite3.jpg" alt="room3"></li>
+                    <li><img src="images/suite4.jpg" alt="room4"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+        <!--컨텐츠1 f-->
+
+        <!--컨텐츠2 s-->
+        <div id="con2warp">
+            <div class="con2">
+                <h1>PROMOTION</h1>
+                <p class="text">쉘위펫에서 준비한 다양한 프로모션과 이벤트들을 만나보세요.</p>
+
+                <div class="con2_bottom">
+                    <ul class="con2_bottom_inner">
+                        <li>
+                            <div class="con2_hidden">
+                            <img src="images/promotion_1.jpg" alt="프로모션1">
+                            </div>
+                            <h4>#스파#마사지#강아지#고양이#펫테라피스#쉘위펫</h4>
+                            <h3>Massage & Spa</h3>
+                            <p>전문 펫테라피스트 마사지와 심신 안정을 위한 온천수 스파</p>
+                            <h5 class="promotion_text"> 에스테 머드팩 & 피보강화 입욕제<br> 
+                            각질제거/모질관리/피부보습 中택 1</h5>
+                            <h5>2022.01.01 ~ 2022.11.30</h5>
+                            <p class="content__item"><a href="#" class="link link--metis">veiw more</a></p></li>
+
+                        <li>
+                            <div class="con2_hidden">
+                            <img src="images/promotion_2.jpg" alt="프로모션2"></div>
+
+                            <h4>#플렉스#웰컴#프로모션#럭셔리 플렉스#쉘위펫</h4>
+                            <h3>Luxury Flex</h3>
+                            <p>편안한 휴식과 여유로움을 당신과 반려동물에게 선물합니다.</p>
+                            <h5 class="promotion_text">스위트 (성인2 + 반려동물 2)<br>
+                            기본혜택 + 스파&마사지 + 웰컴키트 (펫베이커리&초콜렛)</h5>
+                            <h5>2022.07.05 ~ 2022.09.30</h5>
+                            <p class="content__item"><a href="#" class="link link--metis">veiw more</a></p></li>
+
+                        <li>
+                            <div class="con2_hidden"><img src="images/promotion_3.jpg" alt="프로모션"></div>
+                            <h4>#멍냥이#조식#차 한잔의 #여유#쉘위펫</h4>
+                            <h3>Breakfast & Tea time</h3>
+                            <p>사랑하는 반려동물과 펫캉스 추억을 만들고, 조식혜택을 누려보세요.</p>
+                            <h5 class="promotion_text">
+                            모닝 밀박스 제공 (성인 1 + 반려동물 2)<br>
+                            (*브런치 뷔페 또는 인룸 조식으로 변경 가능합니다.)
+                                </h5>
+                            <h5>상시</h5> <p class="content__item"><a href="#" class="link link--metis">veiw more</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!--컨텐츠2 f-->
+
+        <!--컨텐츠3 s-->
+        <div class="con3">
+            <h1>PET STUDIO</h1>
+                <p class="text">사랑하는 반려동물과의 촬영으로 특별한 기억을 선사합니다.</p>
+                <ul class="con3_img">
+                <li><a href="#"><img src="images/studio_1.jpg" alt="스튜디오 이미지1"></a></li>
+                <li><a href="#"><img src="images/studio_2.jpg" alt="스튜디오 이미지2"></a></li>
+                <li><a href="#"><img src="images/studio_3.jpg" alt="스튜디오 이미지3"></a></li>
+                <li><a href="#"><img src="images/studio_4.jpg" alt="스튜디오 이미지4"></a></li>
+            </ul>
+
+            <div class="con3_more">
+            <p class="content__item_2"><a href="#" class="link link--leda" data-text="find out more"><span>find out more</span></a></p>
+            </div>
+        </div>
+        <!--컨텐츠3 f-->
+
+
+        <!--컨텐츠4 s-->
+        <div class="con4">
+            <h1>CLUB SWP</h1>
+            <p class="text">차별화된 회원 특전과 포인트 혜택을 제공하는 통합 멤버십</p>
+
+            <div class="con4_left">
+                <h1>CLUB SWP</h1>
+                <p>품격 있는 서비스와 다채로운 라이프 스타일을 선사하는멤버십서비스입니다. <br>
+                    지금 가입하시고 회원님만의 위한 특별한 서비스와 다양한 혜택을 받으십시오.<br>
+                    이용 실적에 따라 포인트가 적립되며, 적립된 리워즈 포인트는<br>
+                    쉘위펫 내 호텔,  스파, 마사지, 베이커리 등 다양한 시설에서 <br>
+                    현금처럼 자유롭게 사용하실 수 있습니다.</p>
+                <a href="#">자세히보기</a>
+            </div>
+
+            <div class="con4_right">
+                <a href="#"><img src="images/membership.jpg" alt="멤버십"></a>
+            </div>
+
+        </div>
+        <!--컨텐츠4 f-->
+
+        <!--컨텐츠5 s-->
+        <div id="con5">
+            <div class="con5_inner">
+            <h1>REVIEW</h1>
+            <p class="text">홈페이지 예약하고, 따뜻한 후기를 남겨주시면 행운도, 즐거움도 2배</p>
+            <ul class="con5_img">
+                <li><a href="#"><img src="images/review_1.jpg" alt="리뷰1">
+                    <div class="box">
+                    <p>veiw more</p>
+                    </div></a>
+               </li>
+                <li><a href="#"><img src="images/review_2.jpg" alt="리뷰2">
+                    <div class="box">
+                    <p>veiw more</p>
+                    </div>
+                </a></li>
+                <li><a href="#"><img src="images/review_3.jpg" alt="리뷰3">
+                <div class="box">
+                <p>veiw more</p>
+                </div>
+                </a></li>
+            </ul>
+        </div>
+        </div>
+        <!--컨텐츠5 f-->
+
+        <!--푸터 s-->
+        <div id="footer">
+            <div class="footer_inner">
+                <ul class="footer_top">
+                    <li><a href="#none">
+                        <h3>CUSTOMER CENTER</h3>
+                        <table>
+                            <tr>
+                                <th>예약</th>
+                                <td>051.749.1234</td>
+                            </tr>
+
+                            <tr>
+                                <th>FAX</th>
+                                <td>051.749.5678</td>
+                            </tr>
+                            <tr>
+                                <th>E-mail</th>
+                                <td>swp@google.com</td>
+                            </tr>
+                        </table>
+                    </a></li>
+                    
+                    <li><a href="#none">
+                        <h3>E-CONCIERGE SERVICE</h3>
+                        <p>쉘위펫을 더욱 편리하게 즐길 수 있는 앱</p>
+                        <img src="images/app stor.png" alt="애플스토어">
+                        <img src="images/google play.png" alt="구글스토어">
+                    </a></li>
+
+                    <li><a href="#none">
+                        <select>
+                            <option>LANGUAGE</option>
+                            <option>English</option>
+                            <option>한국어</option>
+                        </select>
+                    </a></li>
+                    <a href="#none" class="app app_left"><img src="images/facebook.png" alt="페이스북"></a>
+                    <a href="#none" class="app"><img src="images/instagram.png" alt="인스타그램"></a>
+                </ul>
+
+
+
+                <div class="footer_botoom1">
+                <ul class="footer_bottom">
+                    <li><a href="#none" class="margin_left">오시는길</a></li>
+                    <li><a href="#none">｜</a></li>
+                    <li><a href="#none">사이트맵</a></li>
+                    <li><a href="#none">｜</a></li>
+                    <li><a href="#none">개인정보처리방침</a></li>
+                    <li><a href="#none">｜</a></li>
+                    <li><a href="#none">이용약관</a></li>
+                    <li><a href="#none">｜</a></li>
+                    <li><a href="#none">채용안내</a></li>
+                    <li><a href="#none">｜</a></li>
+                    <li><a href="#none">ABOUT US</a></li>
+                </ul>
+
+                <P class="ad">부산광역시 해운대구 어디길 123 <br>
+                Tel. 051.749.1234, E-mail : swp@google.com</P>
+                <img class="footer_img" src="images/logo.png" alt="로고">
+            </div>
+            </div>
+        </div>
+        <!--푸터 f-->
+</body>
+</html>
